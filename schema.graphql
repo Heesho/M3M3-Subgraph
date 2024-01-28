@@ -1,25 +1,44 @@
-type MemeFactory__MemeCreated @entity(immutable: true) {
-  id: Bytes!
-  index: BigInt! # uint256
-  meme: Bytes! # address
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
-}
-
-type MemeFactory__TreasuryUpdated @entity(immutable: true) {
-  id: Bytes!
+type Directory @entity {
+  id: ID! # address
+  memeCount: Int!
+  transactionCount: BigInt! # uint256
+  totalVolume: BigInt! # uint256
+  totalLiquidity: BigInt! # uint256
+  owner: Bytes! # address
   treasury: Bytes! # address
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
 }
 
-type OwnershipTransferred @entity(immutable: true) {
-  id: Bytes!
-  previousOwner: Bytes! # address
-  newOwner: Bytes! # address
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
+type Meme @entity {
+  id: Int! # address
+  name: String!
+  symbol: String!
+  uri: String!
+  status: String!
+
+  # meme
+  # fees
+  # preMeme
+  # statusHolder
+
+  # createdAt:
+  # openedAt:
+  # opened: Boolean!
+
+  # totalMemeBalance
+  # totalBaseContributed
+
+  # virtualReserveBase:
+  # reserveBase:
+  # reserveMeme:
+  # totalFeesBase:
+
+  totalSupply: BigInt! # uint256
+  floorPrice: BigInt! # uint256
+  marketPrice: BigInt! # uint256
+  liquidity: BigInt! # uint256
+  volume: BigInt! # uint256
+  transactions: [Transaction!]! # address
+
+  # swapCount
+  # swaps
 }

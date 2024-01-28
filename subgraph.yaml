@@ -16,9 +16,7 @@ dataSources:
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - MemeFactory__MemeCreated
-        - MemeFactory__TreasuryUpdated
-        - OwnershipTransferred
+        - Directory
       abis:
         - name: MemeFactory
           file: ./abis/MemeFactory.json
